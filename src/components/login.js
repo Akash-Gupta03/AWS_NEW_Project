@@ -40,7 +40,7 @@ const Login = () => {
         e.preventDefault();
     
         if (username === 'Akash' && password === '123') {
-            Navigate('/dashboawewewerd');
+            Navigate('/dashboard');
         } else {
             setError('Invalid username or password');
         }
