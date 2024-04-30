@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 const Login = () => {
     const Navigate = useNavigate();
     const [username, setUsername] = useState('');
@@ -40,7 +41,7 @@ const Login = () => {
         e.preventDefault();
     
         if (username === 'Akash' && password === '123') {
-            Navigate('/dashboards');
+            Navigate('/dashboard');
         } else {
             setError('Invalid username or password');
         }
@@ -49,8 +50,8 @@ const Login = () => {
     
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '20%' }}>
-            <form onSubmit={handleSubmit}>
+        <div style={{ textAlign: 'center', marginTop: '20%' }} >
+            <form onSubmit={handleSubmit} >
                 <input
                     name="username"
                     placeholder="Username"
@@ -67,11 +68,13 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    style={{ marginTop: '15px' }}
                 />
                 <br />
-                <button type="submit" style={{ marginTop: '15px' }}>
+                <button type="submit" style={{ marginTop: '15px',border:"2px solid blue" }}>
                     Click here
                 </button>
+                <p style={{marginTop:"10px"}}>Not a user <a href='/'>SignUp</a></p>
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
